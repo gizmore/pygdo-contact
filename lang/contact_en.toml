@@ -1,0 +1,8 @@
+module_contact = "Contact"
+
+########
+# Form #
+########
+mt_contact_form = "Send Contact Message"
+md_contact_form = "Send a contact message to the staff members of the site."
+
