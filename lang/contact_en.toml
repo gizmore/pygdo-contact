@@ -5,4 +5,7 @@ module_contact = "Contact"
 ########
 mt_contact_form = "Send Contact Message"
 md_contact_form = "Send a contact message to the staff members of the site."
-
+mails_contact = "New Contact Message"
+mailb_contact = "Hello %s,\n\nThere has been filed a new contact message.\n\nFrom: %s\nMessage:\n%s\n\n"
+info_contact_form = "Here you can contact the staff members: %s."
+msg_contact_sent = "Your contact message has been sent."
