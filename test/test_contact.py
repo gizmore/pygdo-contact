@@ -26,6 +26,7 @@ class AvatarTest(unittest.TestCase):
         self.assertTrue(module_enabled('contact'), 'cannot install contact')
 
     def test_01_form_rendering(self):
+        web_gizmore()
         out = web_plug('contact.form.html').exec()
         self.assertIn('gizmore', out, 'Staff link not shown on contact form.')
 
