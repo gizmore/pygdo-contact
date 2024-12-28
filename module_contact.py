@@ -26,6 +26,6 @@ class module_contact(GDO_Module):
     def cfg_captcha(self) -> bool:
         return self.get_config_value('contact_captcha') and module_enabled('captcha')
 
-    async def gdo_init_sidebar(self, page):
+    def gdo_init_sidebar(self, page):
         page._bottom_bar.add_field(GDT_Link().href(self.href('form')).text('module_contact'))
 
