@@ -4,7 +4,7 @@ from gdo.core.GDT_AutoInc import GDT_AutoInc
 from gdo.core.GDT_Creator import GDT_Creator
 from gdo.date.GDT_Created import GDT_Created
 from gdo.mail.GDT_Email import GDT_Email
-from gdo.ui.GDT_Message import GDT_Message
+from gdo.message.GDT_Message import GDT_Message
 
 
 class GDO_ContactMessage(GDO):
