@@ -18,7 +18,7 @@ class form(MethodForm):
         staff = []
         for user in GDO_User.staff():
             staff.append(GDT_ProfileLink().user(user).with_username().with_avatar().render())
-        form.text('info_contact_form', [Arrays.human_join(staff)])
+        form.text('info_contact_form', (Arrays.human_join(staff),))
         email = GDT_Email('email')
         if self._env_user.is_user():
             email.initial(self._env_user.get_setting_val('email'))
@@ -50,9 +50,9 @@ class form(MethodForm):
     def send_mail(self, user: GDO_User, email: str, message: str):
         mail = Mail.from_bot()
         mail.subject(t('mails_contact'))
-        mail.body(t('mailb_contact', [
+        mail.body(t('mailb_contact', (
             user.render_name(),
             email,
             message,
-        ]))
+        )))
         mail.send_to_user(user)
