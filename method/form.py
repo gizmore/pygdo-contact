@@ -17,7 +17,7 @@ class form(MethodForm):
     def gdo_create_form(self, form: GDT_Form) -> None:
         staff = []
         for user in GDO_User.staff():
-            staff.append(GDT_ProfileLink().user(user).with_username().with_avatar().render())
+            staff.append(GDT_ProfileLink().user(user).with_avatar().render())
         form.text('info_contact_form', (Arrays.human_join(staff),))
         email = GDT_Email('email')
         if self._env_user.is_user():
