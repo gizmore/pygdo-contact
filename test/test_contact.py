@@ -34,6 +34,12 @@ class ContactTest(GDOTestCase):
         out = WebPlug('contact.form.html').user('gizmore').post({'message': "test", 'submit': 1}).exec()
         self.assertIn('gizmore', out, 'Staff link not shown on contact form.')
 
+    def test_03_email_required(self):
+        Application.set_session(GDO_Session.for_user(web_gizmore()))
+        out = WebPlug('contact.form.html').user('gizmore').post({'message': "test", 'submit': 1}).exec()
+        self.assertIn('required="required"', out, 'No required fields found.')
+
+
 
 if __name__ == '__main__':
     unittest.main()

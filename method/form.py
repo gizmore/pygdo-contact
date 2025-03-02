@@ -19,7 +19,8 @@ class form(MethodForm):
         for user in GDO_User.staff():
             staff.append(GDT_ProfileLink().user(user).with_avatar().render())
         form.text('info_contact_form', (Arrays.human_join(staff),))
-        email = GDT_Email('email')
+        cm = GDO_ContactMessage()
+        email = GDT_Email('email').not_null()
         if self._env_user.is_user():
             email.initial(self._env_user.get_setting_val('email'))
         form.add_field(
