@@ -34,14 +34,11 @@ class form(MethodForm):
     def form_submitted(self):
         email = self.param_value('email')
         message = self.param_val('message')
-
         GDO_ContactMessage.blank({
             'cm_from': email,
             'cm_message': message,
         }).insert()
-
         self.send_mails(email, message)
-
         return self.msg('msg_contact_sent')
 
     def send_mails(self, email: str, message: str):
