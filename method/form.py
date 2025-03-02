@@ -39,6 +39,7 @@ class form(MethodForm):
             'cm_message': message,
         }).insert()
         self.send_mails(email, message)
+        self.clear_form()
         return self.msg('msg_contact_sent')
 
     def send_mails(self, email: str, message: str):
