@@ -14,6 +14,9 @@ from gdo.user.GDT_ProfileLink import GDT_ProfileLink
 
 class form(MethodForm):
 
+    def gdo_connectors(self) -> str:
+        return "web"
+
     def gdo_create_form(self, form: GDT_Form) -> None:
         staff = []
         for user in GDO_User.staff():
