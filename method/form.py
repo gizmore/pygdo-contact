@@ -26,7 +26,7 @@ class form(MethodForm):
         email = GDT_Email('email').not_null()
         if self._env_user.is_user():
             email.initial(self._env_user.get_setting_val('email'))
-        form.add_field(
+        form.add_fields(
             email,
             GDT_Message('message').not_null(),
         )
