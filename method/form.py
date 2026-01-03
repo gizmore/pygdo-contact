@@ -20,7 +20,8 @@ class form(MethodForm):
     def gdo_create_form(self, form: GDT_Form) -> None:
         staff = []
         for user in GDO_User.staff():
-            staff.append(GDT_ProfileLink().user(user).with_avatar().render())
+            if user.gdo_val('user_server') == '2':
+                staff.append(GDT_ProfileLink().user(user).with_avatar().render())
         form.text('info_contact_form', (Arrays.human_join(staff),))
         cm = GDO_ContactMessage()
         email = GDT_Email('email').not_null()
