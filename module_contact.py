@@ -4,11 +4,12 @@ from gdo.base.Util import module_enabled
 from gdo.contact.GDO_ContactMessage import GDO_ContactMessage
 from gdo.core.GDT_Bool import GDT_Bool
 from gdo.ui.GDT_Link import GDT_Link
+from gdo.base.GDO import GDO
 
 
 class module_contact(GDO_Module):
 
-    def gdo_classes(self):
+    def gdo_classes(self) -> list[type[GDO]]:
         return [
             GDO_ContactMessage,
         ]
